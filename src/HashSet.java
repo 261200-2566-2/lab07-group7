@@ -1,6 +1,9 @@
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
-public class HashSet<E> implements Set<E>{
+import java.util.Set;
+
+public class HashSet<E> implements Set<E> {
 
     private static final Object DUMMY = new Object();
     private HashMap<E, Object> map ;
@@ -67,6 +70,8 @@ public class HashSet<E> implements Set<E>{
         return false;
     }
 
+
+
     @Override
     public boolean removeAll(Collection<?> c) {
         boolean modified = false;
@@ -99,5 +104,15 @@ public class HashSet<E> implements Set<E>{
 
     public Iterator<E> iterator() {
         return map.keySet().iterator();
+    }
+
+    @Override
+    public Object[] toArray() {
+        return new Object[0];
+    }
+
+    @Override
+    public <T> T[] toArray(T[] a) {
+        return null;
     }
 }
